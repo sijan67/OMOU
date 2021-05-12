@@ -1,1 +1,1 @@
-Good job! I think that the sentiment analysis accuracy is good, and should focus on the other aspects of the proejct
+Nice progress!
