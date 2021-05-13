@@ -63,9 +63,15 @@ h2{
     min-height: 100vh;
 }
 
+.button {
+  padding: 10px 2px;
+  color: aliceblue;
+}
+
 .link{
     color:black;
 }
+
 .header-container {
     flex: 1;
 }
