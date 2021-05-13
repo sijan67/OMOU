@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+       
+    <div class= "body-container">
+        <image src= "{% static 'welcome.jpg' %}" width=100% height= 400px>
+            
+        <div class="title">
+        <h2>
+            Get movies, podcasts, books and songs recommended based on your mood :)
+        </h2>
+        </div>
+          
+        <div class = "question">
+            How are you feeling today? 
+        </div>
+
+        <div class = "box">
+            <form action="select" method='post' autocomplete="off">
+
+                {% csrf_token %}
+                <input class= "input" type="text" name="journal" placeholder="Type something in here" size="130">
+
+                <button name="submit" type="submit" value="Submit">Submit</button>
+            
+            </form>
+            
+        </div>
+      
+    </div>
+{% endblock %}

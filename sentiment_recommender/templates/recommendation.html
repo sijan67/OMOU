@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load rec_tags %}
+{% block content %}
+
+    Journal entry: {{ journal }}<br>
+    Current selection: {{ selection }}<br>
+    Range: {{start}}, {{end}}<br>
+    Result range:{% result_range %}
+
+    {% result_range as range%}
+
+    {% for media in result|slice:range %}
+        <p> {{ media }} </p> 
+    {% endfor %}
+
+    <form action="recommendation" method='post'>
+
+        {% csrf_token %}
+        <input type="submit" name='more' value="More" />
+
+    </form>
+
+    <div>
+        <div>Browse different media</div> 
+        <form action="recommendation" method='post'>
+    
+            {% csrf_token %}
+
+            {% ifnotequal selection "Movies" %}
+                <input type="submit" name='selection' value="Movies" />
+            {% endifnotequal %}
+
+            {% ifnotequal selection "Music" %}
+                <input type="submit" name='selection' value="Music" />
+            {% endifnotequal %}
+
+            {% ifnotequal selection "Podcasts" %}
+                <input type="submit" name='selection' value="Podcasts" />
+            {% endifnotequal %}
+
+            {% ifnotequal selection "Anime" %}
+                <input type="submit" name='selection' value="Anime" />
+            {% endifnotequal %}
+        
+        </form>
+    </div>
+
+    <a href="http://{{ request.get_host }}">New Entry</a>
+    
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "question">
+    What kind of media are you interested in? 
+</div>
+
+<form action="recommendation" method='post'>
+    
+    {% csrf_token %}
+    <input type="submit" name='selection' value="Movies" />
+    <input type="submit" name='selection' value="Music" />
+    <input type="submit" name='selection' value="Podcasts" />
+    <input type="submit" name='selection' value="Anime" />
+
+</form>
+
+<form action="{{ request.META.HTTP_REFERER }}" method='post'>
+
+    {% csrf_token %}
+    <input type="submit" value="Back" />
+    
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'layout.css' %}" />
+    <head>
+        <title>Recommender App</title>
+        <meta name="vieport" content="width=device-width, initial-scale=1.0">
+        <meta http-quiv="X-UA-Compatible" content="ie=edge">
+    </head>
+
+<body>
+    <div class= "main-container">
+        {% block content %}
+  
+        {% endblock %}
+    </div>
+    
+    <div class="foot-container">
+        <div>   
+            <a class= "link" href="mailto:sijuichi@gmail.com">Contact Us</a>
+        </div>
+    </div>
+</body>
+
+</html>
