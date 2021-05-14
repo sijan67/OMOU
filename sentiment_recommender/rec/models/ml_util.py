@@ -140,4 +140,5 @@ def music_model(input_string):
   print("Distribution: {0}".format(input))
   print("TRACK LINK: https://open.spotify.com/track/" + id)
   actual_track = new_df[new_df['id']==id]
+  print(type(actual_track))
   return [pd.Series.to_string(actual_track['artists'])]
