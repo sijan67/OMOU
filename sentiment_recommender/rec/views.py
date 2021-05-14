@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils.safestring import SafeData, SafeText, mark_safe
 from . import models
+from .models import ml_util, podcast_rec
 
 def home(request):
     return render(request, 'home.html') 
@@ -32,10 +33,10 @@ def recommendation(request):
             context['result'] = ["Movie 1", "Movie 2", "Movie 3", "Movie 4", "Movie 5", "Movie 6", "Movie 7", "Movie 8", "Movie 9", "Movie 10", "Movie 11"]
         
         if selection == "Music":
-            context['result'] = ["Song 1", "Song 2"," Song 3", "Song 4", "Song 5"]
+            context['result'] = ml_util.music_model(context['journal'])
 
         if selection == "Podcasts":
-            context['result'] = ["Podcast 1", "Podcast 2"]
+            context['result'] = podcast_rec.podcast_model(context['journal'])
 
         if selection == "Anime":
             context['result'] = ["Show 1", "Show 2", "Show 3", "Show 4", "Show 5", "Show 6", "Show 7", "Show 8"]
