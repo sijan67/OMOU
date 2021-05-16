@@ -6,10 +6,10 @@
     
     <form action="recommendation" method='post'>
         {% csrf_token %}
-        <input class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Movies" />
-        <input class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Music" />
-        <input class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Podcasts" />
-        <input class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Anime" />
+        <button class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Movie"> Movies</button>
+        <button class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Music"> Music</button>
+        <button class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Podcast"> Podcasts</button>
+        <button class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Anime"> Anime</button>
     </form>
 
     <form action="{{ request.META.HTTP_REFERER }}" method='post'>

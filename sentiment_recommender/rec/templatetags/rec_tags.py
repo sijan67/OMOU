@@ -10,3 +10,7 @@ def result_range(context):
 @register.simple_tag(takes_context=True)
 def more_result(context):
     return context['end'] < len(context['result'])
+
+@register.simple_tag(takes_context=True)
+def has_result(context):
+    return len(context['result']) > 0
