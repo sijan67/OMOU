@@ -95,9 +95,4 @@ def podcast_model(input_string):
   pred_val = labels[np.argmax(pred)]
   print(pred_val)
   recs =df[df["Genre"] == pred_val].head(5)
-  print(type(recs))
-  recommended = []
-  for rec in recs:
-    print(rec["Name"])
-    #recommended.append(pd.Series.to_string(rec["Name"])) #
-  return recommended
+  return pd.Series.tolist(recs["Name"])

@@ -2,31 +2,21 @@
 {% load static %}
 
 {% block content %}
-       
+<center>
     <div class= "body-container">
-        <image src= "{% static 'welcome.jpg' %}" width=100% height= 400px>
-            
-        <div class="title">
-        <h2>
-            Get movies, podcasts, books and songs recommended based on your mood :)
-        </h2>
-        </div>
-          
-        <div class = "question">
-            How are you feeling today? 
-        </div>
+        <h1 class="title" style="margin-top: 100px;margin-bottom: 5px;">Insert catchy name</h1>
+        <h2> Get movie, podcast, book and song recommendations based on your mood </h2>
 
-        <div class = "box">
+        <div class = "card" style="width: 60rem;">
             <form action="select" method='post' autocomplete="off">
 
                 {% csrf_token %}
-                <input class= "input" type="text" name="journal" placeholder="Type something in here" size="130">
+                <input type="text" class="form-control" name="journal" placeholder="Please enter a brief description of your day" size="200">
 
-                <button name="submit" type="submit" value="Submit">Submit</button>
+                <button class="btn btn-primary btn-simple animation-on-hover" type="submit">Submit</button>
             
-            </form>
-            
-        </div>
-      
+            </form>           
+        </div>     
     </div>
+</center>
 {% endblock %}

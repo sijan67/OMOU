@@ -1,24 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class = "question">
-    What kind of media are you interested in? 
-</div>
-
-<form action="recommendation" method='post'>
+<center>
+    <h1 class="sub-title" style="margin-bottom: 70px;margin-top: 150px;">What kind of media are you interested in? </h1>
     
-    {% csrf_token %}
-    <input type="submit" name='selection' value="Movies" />
-    <input type="submit" name='selection' value="Music" />
-    <input type="submit" name='selection' value="Podcasts" />
-    <input type="submit" name='selection' value="Anime" />
+    <form action="recommendation" method='post'>
+        {% csrf_token %}
+        <input class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Movies" />
+        <input class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Music" />
+        <input class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Podcasts" />
+        <input class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Anime" />
+    </form>
 
-</form>
+    <form action="{{ request.META.HTTP_REFERER }}" method='post'>
 
-<form action="{{ request.META.HTTP_REFERER }}" method='post'>
-
-    {% csrf_token %}
-    <input type="submit" value="Back" />
-    
-</form>
+        {% csrf_token %}
+        <input class="btn btn-primary btn-simple" type="submit" value="Back" />   
+    </form>
+</center>
 {% endblock %}

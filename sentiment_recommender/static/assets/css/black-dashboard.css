@@ -2075,7 +2075,7 @@ pre code {
 .form-control {
   display: block;
   width: 100%;
-  height: calc(2.25rem + 2px);
+  height: calc(4.25rem + 2px);
   padding: 0.5rem 0.7rem;
   font-size: 0.875rem;
   font-weight: 400;
@@ -14693,7 +14693,7 @@ fieldset[disabled] .btn-link.active {
 .form-control {
   border-color: #2b3553;
   border-radius: 0.4285rem;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   -moz-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -16565,7 +16565,29 @@ p.description {
 }
 
 .title {
-  font-weight: 600;
+  font-weight: 900;
+  background-color: red;
+  background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-size: 6.5em;
+}
+
+.sub-title {
+  font-weight: 700;
+  background-color: red;
+  background-image: linear-gradient(45deg, #f3ec78, #e14eca);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-size: 4em;
 }
 
 .title.title-up {
@@ -16644,7 +16666,7 @@ p.description {
 
 ul li,
 ol li {
-  color: #ffffff;
+  color: #1d253b;
 }
 
 pre {
@@ -19935,9 +19957,11 @@ Copyright (c) 2015 Daniel Eden
   background: #27293d;
   border: 0;
   position: relative;
-  width: 100%;
+  width: 60%;
   margin-bottom: 30px;
   box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  width: 60%;
 }
 
 .card label {

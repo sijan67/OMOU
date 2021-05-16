@@ -1,50 +1,52 @@
 {% extends 'base.html' %}
 {% load rec_tags %}
 {% block content %}
-
-    Journal entry: {{ journal }}<br>
-    Current selection: {{ selection }}<br>
-    Range: {{start}}, {{end}}<br>
-    Result range:{% result_range %}
-
+    <center>
+        <h1 class="sub-title" style="margin-top: 40px;">{{ selection }} recommendations.</h1>
+    </center> 
     {% result_range as range%}
-
-    {% for media in result|slice:range %}
-        <p> {{ media }} </p> 
-    {% endfor %}
-
-    <form action="recommendation" method='post'>
-
-        {% csrf_token %}
-        <input type="submit" name='more' value="More" />
-
-    </form>
-
+    <div class="card">
+            <ul class="list-group list-group-flush">
+                {% for media in result|slice:range %}
+                    <li class="list-group-item">{{ media }}</li>
+                {% endfor %}
+            </ul>
+        
+        {% more_result as is_more %}
+        {% if is_more %}
+        <center>
+            <form action="recommendation" method='post'>
+                {% csrf_token %}
+                <input class="btn btn-primary btn-link" type="submit" name='more' value="More" />
+            </form>
+        </center>
+        {% endif %}
+    </div>
+    <center>  
     <div>
-        <div>Browse different media</div> 
         <form action="recommendation" method='post'>
-    
+            <h3 style="margin-bottom: 0px;margin-top: 40px;">Browse different media</h3> 
             {% csrf_token %}
 
             {% ifnotequal selection "Movies" %}
-                <input type="submit" name='selection' value="Movies" />
+                <input class="btn btn-primary animation-on-hover" type="submit" name='selection' value="Movies" />
             {% endifnotequal %}
 
             {% ifnotequal selection "Music" %}
-                <input type="submit" name='selection' value="Music" />
+                <input class="btn btn-primary animation-on-hover" type="submit" name='selection' value="Music" />
             {% endifnotequal %}
 
             {% ifnotequal selection "Podcasts" %}
-                <input type="submit" name='selection' value="Podcasts" />
+                <input class="btn btn-primary animation-on-hover" type="submit" name='selection' value="Podcasts" />
             {% endifnotequal %}
 
             {% ifnotequal selection "Anime" %}
-                <input type="submit" name='selection' value="Anime" />
+                <input class="btn btn-primary animation-on-hover" type="submit" name='selection' value="Anime" />
             {% endifnotequal %}
         
         </form>
     </div>
 
-    <a href="http://{{ request.get_host }}">New Entry</a>
-    
+    <a class="btn btn-primary btn-simple" href="http://{{ request.get_host }}">New Entry</a>
+    </center>
 {% endblock %}

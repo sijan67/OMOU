@@ -59,5 +59,6 @@
 
 .card.card-upgrade .card-category {
   max-width: 530px;
-  margin: 0 auto;
+  margin: auto;
+  width: 60%;
 }
