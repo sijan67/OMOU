@@ -9,4 +9,4 @@ Code for models and recommender systems can be found under the 'Models' folder. 
 
 ## Video
 
-https://youtu.be/ERyTHQRV0sE
+[![VIDEO](https://img.youtube.com/vi/ERyTHQRV0sE/0.jpg)](https://youtu.be/ERyTHQRV0sE)
