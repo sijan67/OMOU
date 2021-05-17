@@ -28,9 +28,6 @@
             <form action="recommendation" method='post'>
                 <h3 style="margin-bottom: 0px;margin-top: 40px;">Browse different media</h3> 
                 {% csrf_token %}
-                {% ifnotequal selection "Movie" %}
-                    <button class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Movie"> Movies</button>
-                {% endifnotequal %}
                 {% ifnotequal selection "Music" %}
                     <button class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Music"> Music</button>
                 {% endifnotequal %}

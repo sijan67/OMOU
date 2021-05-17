@@ -28,8 +28,6 @@ def recommendation(request):
         request.session['selection'] = selection
         context['selection'] = selection
         print(type(context['journal']))
-        if selection == "Movie":
-            context['result'] = ["Movie 1", "Movie 2", "Movie 3", "Movie 4", "Movie 5", "Movie 6", "Movie 7", "Movie 8", "Movie 9", "Movie 10", "Movie 11"]
         
         if selection == "Music":
             context['result'] = ml_models.music_model(context['journal'])
