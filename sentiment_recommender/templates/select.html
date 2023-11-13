@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <h1 class="sub-title" style="margin-bottom: 70px;margin-top: 150px;">What kind of media are you interested in? </h1>
+    
+    <form action="recommendation" method='post'>
+        {% csrf_token %}
+        <button class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Music"> Music</button>
+        <button class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Podcast"> Podcasts</button>
+        <button class="btn btn-primary animation-on-hover btn-lg" type="submit" name='selection' value="Anime"> Anime</button>
+    </form>
+
+    <form action="{{ request.META.HTTP_REFERER }}" method='post'>
+
+        {% csrf_token %}
+        <input class="btn btn-primary btn-simple" type="submit" value="Back" />   
+    </form>
+</center>
+{% endblock %}
